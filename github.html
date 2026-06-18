@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerbevon | Ссылки и Контакты</title>
+    
+    <!-- Подключаем Tailwind CSS для стилей -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Подключаем иконки Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Подключаем современный шрифт -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: '#58a6ff', // Цвет ссылок в стиле GitHub
+                        darkbg: '#0d1117', // Цвет фона GitHub
+                        cardbg: '#161b22', // Цвет карточек GitHub
+                        bordercolor: '#30363d' // Цвет рамок GitHub
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            /* Фоновый паттерн в точку для красоты */
+            background-image: radial-gradient(#30363d 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+        
+        /* Задержки для анимации появления кнопок */
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+    </style>
+</head>
+
+<body class="bg-darkbg text-gray-300 font-sans min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
+
+    <!-- Декоративные световые пятна на фоне -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand/10 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <!-- Главная карточка визитки -->
+    <main class="w-full max-w-md relative z-10">
+        
+        <header class="flex flex-col items-center mb-8 opacity-0 animate-fade-in">
+            <div class="relative group cursor-pointer mb-4">
+                <!-- Анимация пульсации вокруг аватара -->
+                <div class="absolute -inset-1 bg-gradient-to-r from-brand to-purple-500 rounded-full blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
+                
+                <!-- Аватарка (автоматически берется с твоего GitHub по логину) -->
+                <img src="https://github.com/gerbevon.png" 
+                     alt="Gerbevon" 
+                     class="relative w-28 h-28 rounded-full border-4 border-cardbg object-cover shadow-xl animate-float bg-cardbg fallback-avatar"
+                     onerror="this.src='https://placehold.co/200x200/161b22/58a6ff?text=G'">
+            </div>
+            
+            <h1 class="text-2xl font-bold text-white mb-1">@gerbevon</h1>
+            <p class="text-gray-400 text-center text-sm px-4">
+                Разработчик | Open Source Энтузиаст<br>
+                Создаю крутые штуки для веба.
+            </p>
+        </header>
+
+        <nav class="flex flex-col gap-3">
+            
+            <!-- Ссылка на основной GitHub -->
+            <a href="https://github.com/gerbevon" target="_blank" rel="noopener noreferrer" 
+               class="group relative flex items-center p-4 bg-cardbg border border-bordercolor rounded-xl hover:border-brand hover:bg-[#1f242c] transition-all duration-300 opacity-0 animate-fade-in delay-1 overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-brand transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom"></div>
+                <i class="fab fa-github text-xl w-8 text-white"></i>
+                <span class="font-medium text-white flex-1 text-center pr-8">Мой GitHub</span>
+            </a>
+
+            <!-- Ссылка на Telegram -->
+            <a href="https://t.me/gerbevon" target="_blank" rel="noopener noreferrer" 
+               class="group relative flex items-center p-4 bg-cardbg border border-bordercolor rounded-xl hover:border-[#2AABEE] hover:bg-[#1f242c] transition-all duration-300 opacity-0 animate-fade-in delay-2 overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#2AABEE] transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom"></div>
+                <i class="fab fa-telegram text-xl w-8 text-[#2AABEE]"></i>
+                <span class="font-medium text-white flex-1 text-center pr-8">Связаться в Telegram</span>
+            </a>
+
+            <!-- Ссылка на проекты/портфолио -->
+            <a href="#" target="_blank" rel="noopener noreferrer" 
+               class="group relative flex items-center p-4 bg-cardbg border border-bordercolor rounded-xl hover:border-purple-500 hover:bg-[#1f242c] transition-all duration-300 opacity-0 animate-fade-in delay-3 overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-purple-500 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom"></div>
+                <i class="fas fa-laptop-code text-xl w-8 text-purple-500"></i>
+                <span class="font-medium text-white flex-1 text-center pr-8">Мои Проекты</span>
+            </a>
+
+            <!-- Ссылка на LinkedIn (или другая соцсеть) -->
+            <a href="https://www.linkedin.com/in/gerbevon/" target="_blank" rel="noopener noreferrer" 
+               class="group relative flex items-center p-4 bg-cardbg border border-bordercolor rounded-xl hover:border-[#0077b5] hover:bg-[#1f242c] transition-all duration-300 opacity-0 animate-fade-in delay-4 overflow-hidden">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#0077b5] transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom"></div>
+                <i class="fab fa-linkedin text-xl w-8 text-[#0077b5]"></i>
+                <span class="font-medium text-white flex-1 text-center pr-8">LinkedIn</span>
+            </a>
+
+            <!-- Кнопка почты с копированием -->
+            <button onclick="copyEmail()" id="emailBtn"
+               class="group relative flex items-center p-4 bg-cardbg border border-bordercolor rounded-xl hover:border-green-500 hover:bg-[#1f242c] transition-all duration-300 opacity-0 animate-fade-in delay-5 overflow-hidden w-full text-left">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-green-500 transform scale-y-0 group-hover:scale-y-100 transition-transform origin-bottom"></div>
+                <i class="fas fa-envelope text-xl w-8 text-green-500" id="emailIcon"></i>
+                <span class="font-medium text-white flex-1 text-center pr-8" id="emailText">drakvior@gmail.com</span>
+            </button>
+            
+        </nav>
+
+        <footer class="mt-10 text-center opacity-0 animate-fade-in delay-5">
+            <p class="text-xs text-gray-500 flex items-center justify-center gap-1">
+                <i class="fas fa-code text-brand"></i> with Tailwind & HTML
+            </p>
+        </footer>
+    </main>
+
+    <script>
+        // Функция для копирования email в буфер обмена
+        function copyEmail() {
+            const email = "hello@example.com"; // Замени на свой реальный email
+            const emailTextElement = document.getElementById('emailText');
+            const emailIconElement = document.getElementById('emailIcon');
+            
+            // Временный элемент для копирования
+            const tempInput = document.createElement("input");
+            tempInput.value = email;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            
+            try {
+                document.execCommand("copy");
+                
+                // Визуальный отклик об успешном копировании
+                const originalText = emailTextElement.innerText;
+                emailTextElement.innerText = "Email скопирован!";
+                emailTextElement.classList.add('text-green-400');
+                
+                emailIconElement.classList.remove('fa-envelope');
+                emailIconElement.classList.add('fa-check');
+                
+                // Возвращаем как было через 2 секунды
+                setTimeout(() => {
+                    emailTextElement.innerText = originalText;
+                    emailTextElement.classList.remove('text-green-400');
+                    emailIconElement.classList.remove('fa-check');
+                    emailIconElement.classList.add('fa-envelope');
+                }, 2000);
+                
+            } catch (err) {
+                console.error('Не удалось скопировать текст: ', err);
+            } finally {
+                document.body.removeChild(tempInput);
+            }
+        }
+    </script>
+</body>
+</html>
